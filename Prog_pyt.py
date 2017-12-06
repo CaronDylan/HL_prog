@@ -24,6 +24,6 @@ def era2(nb) :
     return(l)
 
 deb = time.time()
-print(era(10000))
+print(era2(10000))
 fin = time.time()
 print(fin - deb)
