@@ -4,7 +4,7 @@
 
 def era(nb) :
     #Initialisation
-    l = [2] #Je stocke le 1er nombre premier
+    l = [2] #On stocke le 1er nombre premier
     insert = True
     #On parcours tous les nombre entre 3 et celui passé en paramètre
     for cpt in [a for a in range(3,nb+1)] :
