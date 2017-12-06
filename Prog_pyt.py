@@ -1,29 +1,20 @@
-import time
-
+#Programme réalisé par: CARON Dylan
+#Groupe : BROHAN Romain, GASCOIN Samy, CARON Dylan
+#Version peu efficace (voir pas du tout)
 
 def era(nb) :
-    ind = 0
-    l = [a for a in range(2,nb+1)]
-    while max(l) != l[ind] :
-        for cpt in l :
-            if (cpt != (l[ind]) and cpt % (l[ind]) == 0) :
-                l.remove(cpt)
-        ind = ind+1
-    return (l)
-
-def era2(nb) :
-    l = [2]
+    #Initialisation
+    l = [2] #Je stocke le 1er nombre premier
     insert = True
+    #On parcours tous les nombre entre 3 et celui passé en paramètre
     for cpt in [a for a in range(3,nb+1)] :
+        #On test la divisiblité du nombre en cours (cpt) par les nombres premiers déjà stockés
         for a in l :
+            #Si le nombre en cours est divisible par au moins un nombre premier alors on passe Insert à Faux et on ne l'insère pas
             if (cpt % a == 0) :
                 insert = False
         if(insert) :
                 l.append(cpt)
+        #Ré-initialisation de la variable d'insertion
         insert = True
     return(l)
-
-deb = time.time()
-print(era2(10000))
-fin = time.time()
-print(fin - deb)
